@@ -15,7 +15,7 @@ Primeiramente é necessário instalar as bibliotecas pandas e PySimpleGUI
 * pip install pandas
 * pip install PySimpleGUI
 
-Após isso, apenas execute o gerenciador.py.
+Após isso, onde está escrito "CaminhoPC\\Projetos.xlsx" ou "CaminhoPC\\Atividades.xlsx" favor trocar para o caminho de onde está salvos os arquivos xlsx indicado. Em seguida execute o gerenciador.py.
 
 ## Tecnologias
 * Python
