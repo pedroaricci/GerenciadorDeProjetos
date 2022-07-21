@@ -25,7 +25,7 @@ def main():
         if eventos == 'Alterar Atividade':
             alteraAtividade()
 
-    df2 = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
+    df2 = pd.read_excel("CaminhoPC\\Atividades.xlsx")
 
     #plt.pie(df2, 'Finalizada?')
     #plt.show()
@@ -43,7 +43,7 @@ def inserirProjeto():
 
     while True:
         eventos, valores = janelaInsProj.read()
-        df = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Projetos.xlsx")
+        df = pd.read_excel("CaminhoPC\\Projetos.xlsx")
         if eventos == sg.WINDOW_CLOSED:
             break
         if eventos == 'Confirmar':
@@ -52,8 +52,8 @@ def inserirProjeto():
             df.loc[i, 'Nome do Projeto'] = str(valores['nomeProjeto'])
             df.loc[i, 'Data Inicio'] = str(valores['dataInicioProj'])
             df.loc[i, 'Data de Fim'] = str(valores['dataFimProj'])
-            df.loc[::,'Nome do Projeto':].to_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Projetos.xlsx")
-            df = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Projetos.xlsx")
+            df.loc[::,'Nome do Projeto':].to_excel("CaminhoPC\\Projetos.xlsx")
+            df = pd.read_excel("CaminhoPC\\Projetos.xlsx")
             janelaInsProj.close()
 
 def alterarProjeto():
@@ -70,7 +70,7 @@ def alterarProjeto():
 
     while True:
         eventos, valores = janelaAltProj.read()
-        df = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Projetos.xlsx")
+        df = pd.read_excel("CaminhoPC\\Projetos.xlsx")
         if eventos == sg.WINDOW_CLOSED:
             break
         if eventos == 'Confirmar':
@@ -81,7 +81,7 @@ def alterarProjeto():
                 df.loc[idProjeto, 'Nome do Projeto'] = str(valores['novoNomeProj'])
                 df.loc[idProjeto, 'Data Inicio'] = str(valores['novaDataInicio'])
                 df.loc[idProjeto, 'Data de Fim'] = str(valores['novaDataFim'])
-                df.loc[::,'Nome do Projeto':].to_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Projetos.xlsx")                
+                df.loc[::,'Nome do Projeto':].to_excel("CaminhoPC\\Projetos.xlsx")                
                 janelaAltProj.close()
                 
 def inserirAtividade():
@@ -99,7 +99,7 @@ def inserirAtividade():
 
     while True:
         eventos, valores = janelaInsAtiv.read()
-        df2 = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
+        df2 = pd.read_excel("CaminhoPC\\Atividades.xlsx")
         if eventos == sg.WINDOW_CLOSED:
             break
         if eventos == 'Confirmar':
@@ -110,8 +110,8 @@ def inserirAtividade():
             df2.loc[i, 'Data Inicio'] = str(valores['dataInicioAtiv'])
             df2.loc[i, 'Data de Fim'] = str(valores['dataFimAtiv'])
             df2.loc[i, 'Finalizada?'] = str(valores['finalizada'])
-            df2.loc[::,'ID Projeto':].to_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
-            df2 = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
+            df2.loc[::,'ID Projeto':].to_excel("CaminhoPC\\Atividades.xlsx")
+            df2 = pd.read_excel("CaminhoPC\\Atividades.xlsx")
             janelaInsAtiv.close()
 
 def alteraAtividade():
@@ -130,7 +130,7 @@ def alteraAtividade():
 
     while True:
         eventos, valores = janelaAltAtiv.read()
-        df2 = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
+        df2 = pd.read_excel("CaminhoPC\\Atividades.xlsx")
         if eventos == sg.WINDOW_CLOSED:
             break
         if eventos == 'Confirmar':
@@ -144,7 +144,7 @@ def alteraAtividade():
                 df2.loc[idAtiv, 'Data de Fim'] = str(valores['dataFimNovo'])
                 df2.loc[idAtiv, 'Finalizada?'] = str(valores['finalizadaNovo'])
                 df2.loc[::,'ID Projeto':].to_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
-                df2 = pd.read_excel("C:\\Users\\pedro\\music\\Python\\projetos2\\Atividades.xlsx")
+                df2 = pd.read_excel("CaminhoPC\\Atividades.xlsx")
                 janelaAltAtiv.close()
 main()
 
